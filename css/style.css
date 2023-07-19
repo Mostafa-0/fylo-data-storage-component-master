@@ -1,0 +1,225 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  height: 100dvh;
+  font-size: 14px;
+  color: hsl(243, 100%, 93%);
+  background-color: hsl(229, 57%, 11%);
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+@media only screen and (max-width: 800px) {
+  body {
+    background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+  }
+}
+
+.visually-hidden {
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+button:hover {
+  -webkit-filter: brightness(140%);
+          filter: brightness(140%);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  min-width: 200px;
+  width: min(500px, 80vw);
+  background-color: hsl(228, 56%, 26%);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: min(2.5rem, 10vw);
+  border-radius: 10px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.icons-card {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding-right: 8rem;
+  border-top-right-radius: 40%;
+  position: relative;
+}
+
+.logo {
+  width: min(135px, 30vw);
+}
+
+.icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.icons-container button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: hsl(229, 57%, 11%);
+  min-width: 40px;
+  min-height: 40px;
+  width: min(50px, 15vw);
+  height: min(50px, 15vw);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.usage-card {
+  position: relative;
+}
+.usage-card p {
+  margin-bottom: 0.25rem;
+}
+
+meter {
+  background-color: 90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+  display: block;
+  width: 100%;
+  height: 2.4rem;
+  position: relative;
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: hsl(229, 57%, 11%);
+  border: 2.5px solid hsl(229, 57%, 11%);
+}
+
+meter::-webkit-meter-optimum-value {
+  background: -webkit-gradient(linear, left top, right top, from(hsl(6, 100%, 80%)), to(hsl(335, 100%, 65%)));
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 10px;
+}
+
+meter::after {
+  content: "";
+  width: 8.5px;
+  height: 8.5px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: 18.1%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.gbs-left {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  font-size: min(28px, 5vw);
+  position: absolute;
+}
+.gbs-left small {
+  font-size: min(10px, 2.5vw);
+  text-transform: uppercase;
+  color: hsl(229, 7%, 55%);
+  vertical-align: middle;
+}
+@media only screen and (max-width: 800px) {
+  .gbs-left {
+    bottom: -25px;
+    right: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@media only screen and (min-width: 800px) {
+  .gbs-left {
+    top: -35px;
+    right: 35px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .gbs-left::after {
+    content: "";
+    width: 0;
+    border-top: 12px solid white;
+    border-right: 12px solid white;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+  }
+}

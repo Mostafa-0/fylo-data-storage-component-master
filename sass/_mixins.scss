@@ -1,0 +1,36 @@
+// Centering using Flex
+@mixin flex-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Takes a parameter in px and creates a circle accordingly
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50%;
+}
+
+// Hover effect - Increase the brightness
+@mixin hover-brightness {
+  filter: brightness(140%);
+}
+
+// Media Queries
+// For Large screens
+@mixin screen-size($size) {
+  @if $size == large {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+  // For small screens
+  @if $size == small {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+}

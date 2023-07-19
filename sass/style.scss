@@ -1,0 +1,185 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+// Globals
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $fontMain;
+  height: 100dvh;
+  font-size: 14px;
+  color: $Pale-Blue;
+  background-color: $Very-DarkBlue;
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  @include screen-size(small) {
+  background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+  }
+}
+
+.visually-hidden {
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+button:hover{
+  @include hover-brightness;
+}
+
+main {
+  @include flex-centering;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+// First Card
+.card {
+  min-width: 200px;
+  width: min(500px, 80vw);
+  background-color: $Dark-Blue;
+  flex-direction: column;
+  padding: min(2.5rem, 10vw);
+  border-radius: 10px;
+  height: max-content;
+}
+
+.icons-card {
+  max-width: fit-content;
+  padding-right: 8rem;
+  border-top-right-radius: 40%;
+  position: relative;
+}
+
+.logo {
+  width: min(135px, 30vw);
+}
+
+// Icons styles
+.icons-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  button {
+    @include flex-centering;
+    background-color: $Very-DarkBlue;
+    min-width: 40px;
+    min-height: 40px;
+    width: min(50px, 15vw);
+    height: min(50px, 15vw);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+// Second Card
+.usage-card {
+  position: relative;
+  p {
+    margin-bottom: 0.25rem;
+  }
+}
+
+// Meter Styles
+meter {
+  background-color: $Gradient;
+  display: block;
+  width: 100%;
+  height: 2.4rem;
+  position: relative;
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: $Very-DarkBlue;
+  border: 2.5px solid $Very-DarkBlue;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: linear-gradient($Gradient);
+  border-radius: 10px;
+}
+
+meter::after {
+  content: "";
+  @include circle(8.5px);
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: 18.1%;
+  transform: translate(-50%, -50%);
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+// gbs-left-div style
+.gbs-left {
+  min-width: max-content;
+  // width: min(50px, 0.1vw);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  font-size: min(28px, 5vw);
+
+  small {
+    font-size: min(10px, 2.5vw);
+    text-transform: uppercase;
+    color: $Grayish-Blue;
+    vertical-align: middle;
+  }
+
+  // Positioning
+  position: absolute;
+  @include screen-size(small) {
+    bottom: -25px;
+    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include screen-size(large) {
+    top: -35px;
+    right: 35px;
+  }
+}
+
+@include screen-size(large){
+  .gbs-left::after {
+    content: "";
+    width: 0;
+    border-top: 12px solid white;
+    border-right: 12px solid white;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+  }
+}
